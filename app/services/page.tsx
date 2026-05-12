@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
+import Image from "next/image"
 import Link from "next/link"
 import { AreasWeServeDisclosure } from "@/components/AreasWeServeDisclosure"
 import { CTABanner } from "@/components/CTABanner"
@@ -31,20 +32,36 @@ function ServiceSection({
   id,
   title,
   bullets,
+  imageSrc,
+  imageAlt,
 }: {
   id: string
   title: string
   bullets: string[]
+  imageSrc?: string
+  imageAlt?: string
 }) {
+  const visualLabel = imageAlt ?? `Image placeholder for ${title}`
+
   return (
     <section id={id} className="scroll-mt-28 border-b border-black/10 py-16 last:border-b-0">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-12">
           <div
-            className="aspect-[4/3] w-full rounded-sm border border-black/10 bg-offwhite shadow-inner"
-            role="img"
-            aria-label={`Image placeholder for ${title}`}
-          />
+            className={`relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-black/10 shadow-inner ${imageSrc ? "bg-black/5" : "bg-offwhite"}`}
+          >
+            {imageSrc ? (
+              <Image
+                src={imageSrc}
+                alt={visualLabel}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-offwhite" role="img" aria-label={visualLabel} />
+            )}
+          </div>
           <div>
             <h2 className="font-heading text-3xl text-black">{title}</h2>
             <ul className="mt-6 list-disc space-y-3 pl-6 text-charcoal">
@@ -55,7 +72,7 @@ function ServiceSection({
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm border border-black/20 text-black transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm border border-gold bg-gold/10 text-gold transition hover:bg-gold hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 aria-label="Contact us"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -105,6 +122,8 @@ export default function ServicesPage() {
       <ServiceSection
         id="accounting"
         title="Accounting & Bookkeeping"
+        imageSrc="/images/accounting-services.png"
+        imageAlt="Calculator and pen on a financial spreadsheet, representing accounting and bookkeeping services."
         bullets={[
           "Monthly/quarterly bookkeeping",
           "Bank and credit card reconciliations",
@@ -114,6 +133,8 @@ export default function ServicesPage() {
       <ServiceSection
         id="tax"
         title="Tax Planning & Preparation"
+        imageSrc="/images/tax-planning-services.png"
+        imageAlt="U.S. tax forms including Form 1040 and Form 1120 with a pen, representing professional tax preparation and planning."
         bullets={[
           "Business and individual tax strategy",
           "Year-round tax planning (not just filing season)",
@@ -123,6 +144,8 @@ export default function ServicesPage() {
       <ServiceSection
         id="advisory"
         title="Business Advisory"
+        imageSrc="/images/business-advisory-services.png"
+        imageAlt="Professional reviewing plans and paperwork at a desk with a laptop, representing business advisory services."
         bullets={[
           "Cash flow forecasting and budgeting",
           "KPI tracking and financial dashboards",
@@ -132,6 +155,8 @@ export default function ServicesPage() {
       <ServiceSection
         id="reporting"
         title="Financial Reporting"
+        imageSrc="/images/financial-reporting-services.png"
+        imageAlt="Financial spreadsheet and pie chart with a pen, representing financial reporting and analysis."
         bullets={[
           "Custom monthly/quarterly reports",
           "Real-time dashboard access",
@@ -141,6 +166,8 @@ export default function ServicesPage() {
       <ServiceSection
         id="payroll"
         title="Payroll Services"
+        imageSrc="/images/payroll-services.png"
+        imageAlt="Professional working on a laptop at a desk, representing digital payroll and people operations."
         bullets={[
           "Full-service payroll processing",
           "Payroll tax filing and compliance",
