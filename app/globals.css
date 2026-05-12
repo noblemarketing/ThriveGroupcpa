@@ -2,26 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Branch heading font — `public/fonts/Branch.otf` (synced from Client Resources). */
+@font-face {
+  font-family: "Branch";
+  src: url("/fonts/Branch.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply font-body bg-offwhite text-charcoal antialiased;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .noise-overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
   }
 }
