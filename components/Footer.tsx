@@ -19,7 +19,7 @@ const serviceLinks = [
 
 const contactLinks = [
   { label: "Client Portal", href: "/portal" },
-  { label: "Get clarity today", href: "/contact#book" },
+  { label: "Book a discovery call", href: "/contact#book" },
   { label: "Send a Message", href: "/contact#form" },
 ] as const
 
@@ -146,7 +146,7 @@ export function Footer() {
             </SocialIconLink>
           </li>
           <li>
-            <SocialIconLink href="/contact#book" label="Get clarity today">
+            <SocialIconLink href="/contact#book" label="Book a discovery call">
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
                 <rect x="3" y="4" width="18" height="18" rx="2" strokeLinejoin="round" />
                 <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />

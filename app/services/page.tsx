@@ -39,7 +39,7 @@ function ServiceSection({
   return (
     <section id={id} className="scroll-mt-28 border-b border-black/10 py-16 last:border-b-0">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-12">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-12">
           <div
             className="aspect-[4/3] w-full rounded-sm border border-black/10 bg-offwhite shadow-inner"
             role="img"
@@ -73,13 +73,15 @@ function ServiceSection({
 export default function ServicesPage() {
   return (
     <main className="bg-white">
-      <section className="relative isolate border-b border-black/10 bg-offwhite px-6 py-16">
+      <section className="relative isolate border-b border-white/10 bg-[#333333] px-6 py-16">
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <h1 className="font-heading text-4xl text-black md:text-5xl">What We Offer</h1>
-          <p className="mt-4 font-heading text-2xl text-black md:text-3xl">
-            Accounting partners for your success
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:text-sm">
+            Our services
           </p>
-          <p className="mt-4 text-lg text-charcoal">
+          <h1 className="mt-3 font-heading text-2xl text-white md:text-3xl">
+            Accounting partners for your success
+          </h1>
+          <p className="mt-4 text-lg text-white/85">
             From day-to-day precision to forward-looking strategy — we partner with Lancaster-area
             businesses so you can grow with clarity and confidence.
           </p>
@@ -89,7 +91,7 @@ export default function ServicesPage() {
                 <li key={j.href}>
                   <Link
                     href={j.href}
-                    className="inline-flex rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-black transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    className="inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                   >
                     {j.label}
                   </Link>
@@ -146,8 +148,15 @@ export default function ServicesPage() {
         ]}
       />
 
-      <section id="areas" className="scroll-mt-28 bg-offwhite px-6 py-16">
-        <div className="mx-auto max-w-4xl">
+      <section id="areas" className="relative scroll-mt-28 overflow-hidden px-6 py-16">
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/contour-mapping-3-01.jpg')" }}
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-black/20" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 bg-offwhite/65" aria-hidden />
+        <div className="relative z-10 mx-auto max-w-4xl">
           <AreasWeServeDisclosure>
             <p className="text-lg text-charcoal">
               Thrive Group CPA proudly serves businesses and individuals across Lancaster County and

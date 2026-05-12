@@ -147,7 +147,7 @@ export default function HomePage() {
               href="/contact#book"
               className="inline-flex min-h-[48px] items-center justify-center rounded-sm bg-gold px-8 py-3 text-base font-semibold text-black transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
-              Get clarity today
+              Book a discovery call
             </Link>
             <Link
               href="/services"

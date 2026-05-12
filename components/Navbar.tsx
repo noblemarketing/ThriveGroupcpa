@@ -78,7 +78,7 @@ export function Navbar() {
             href="/contact#book"
             className="hidden min-h-[48px] items-center justify-center rounded-sm bg-gold px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:inline-flex lg:min-h-[52px] lg:px-6 lg:text-base"
           >
-            Get clarity today
+            Book a discovery call
           </Link>
         </div>
       </nav>
@@ -103,7 +103,7 @@ export function Navbar() {
               href="/contact#book"
               className="block rounded-sm bg-gold px-3 py-3 text-center text-lg font-semibold text-black hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
-              Get clarity today
+              Book a discovery call
             </Link>
           </li>
         </ul>

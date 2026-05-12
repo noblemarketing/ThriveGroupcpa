@@ -63,32 +63,15 @@ export default function AboutPage() {
   return (
     <main className="bg-offwhite">
       <h1 className="sr-only">About Thrive Group CPA</h1>
-      <section id="our-story" className="scroll-mt-28 px-6 py-16">
+      <section id="our-story" className="scroll-mt-28 bg-[#333333] px-6 py-16">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <h2 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-black sm:text-sm">
-              Our Story & Mission
+            <h2 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:text-sm">
+              Our Mission
             </h2>
-            <p className="mt-3 max-w-3xl text-balance font-heading text-2xl font-normal leading-snug tracking-tight text-black md:text-3xl md:leading-snug">
+            <p className="mt-3 max-w-3xl text-balance font-heading text-2xl font-normal leading-snug tracking-tight text-white md:text-3xl md:leading-snug">
               {MISSION_STATEMENT_FULL}
             </p>
-            <div className="mt-6 space-y-4 text-charcoal">
-              <p>
-                Thrive Group CPA was founded in Lancaster, Pennsylvania with a simple mission: make
-                expert financial guidance accessible to the local businesses that power our
-                community. We saw owners juggling growth, cash flow, and compliance — often without
-                a clear partner in their corner.
-              </p>
-              <p>
-                Our team brings together deep technical skill and a forward-looking mindset. We
-                combine disciplined accounting with practical advisory so you can move from reactive
-                to proactive — with numbers you can rely on and a roadmap you can follow.
-              </p>
-              <p>
-                Whether you are scaling, stabilizing, or planning what is next, we are here to help
-                you thrive with clarity and confidence.
-              </p>
-            </div>
           </div>
           <div
             className="min-h-[280px] w-full rounded-sm bg-black shadow-inner"
