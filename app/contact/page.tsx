@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { ContactForm } from "@/components/ContactForm"
+import { GoogleMapsEmbed } from "@/components/GoogleMapsEmbed"
 import { officeAddressDisplay } from "@/lib/site"
 import { SITE_META_DESCRIPTION } from "@/lib/brand"
 
@@ -59,12 +60,7 @@ export default function ContactPage() {
                 <span className="font-semibold text-black">Hours:</span> Monday–Friday 8am–5pm
               </p>
             </div>
-            <div
-              id="map-embed"
-              className="flex min-h-[280px] items-center justify-center rounded-sm border border-dashed border-black/20 bg-white p-6 text-center text-sm text-charcoal"
-            >
-              Google Maps embed placeholder — add iframe or Maps component when ready.
-            </div>
+            <GoogleMapsEmbed id="map-embed" />
           </div>
         </div>
       </section>
