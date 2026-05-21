@@ -89,8 +89,6 @@ function IconPayroll() {
   )
 }
 
-const values = ["Honor", "Integrity", "Excellence", "Stewardship", "Innovation"] as const
-
 export default function HomePage() {
   return (
     <main>
@@ -212,22 +210,14 @@ export default function HomePage() {
             <span className="block md:inline">The Values That </span>
             <span className="block md:inline">Shape Us</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-charcoal">
-            These principles shape how we listen, advise, and grow alongside you. Every engagement
-            is a partnership — not a transaction.
-          </p>
-          <ul className="mt-10 flex flex-wrap justify-center gap-3">
-            {values.map((v) => (
-              <li key={v}>
-                <Link
-                  href="/about#values"
-                  className="inline-flex rounded-full border border-black/10 bg-white px-5 py-2 text-sm font-semibold text-black shadow-sm transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                >
-                  {v}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="mx-auto mt-4 max-w-3xl space-y-2 text-center text-charcoal">
+            <p>These principles shape how we listen, advise, and grow alongside you.</p>
+            <div className="w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <p className="mx-auto w-max whitespace-nowrap text-sm sm:text-base">
+                Every engagement is a partnership — not a transaction.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="overflow-x-hidden bg-offwhite">
-      <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#333333] px-6 py-16">
+      <section className="relative isolate overflow-hidden border-b border-white/10 bg-black px-6 py-16">
         <div className="relative z-10 mx-auto max-w-3xl text-center">
           <h1 className="relative z-10 font-heading text-4xl text-white md:text-5xl">
             Contact Thrive Group CPA

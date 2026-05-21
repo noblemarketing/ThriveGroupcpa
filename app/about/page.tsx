@@ -41,14 +41,16 @@ function IconStar() {
 
 function IconStewardship() {
   return (
-    <Image
-      src="/images/icon-logo.png"
-      alt=""
-      width={36}
-      height={48}
-      className="h-12 w-auto object-contain mix-blend-lighten"
-      aria-hidden
-    />
+    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-black">
+      <Image
+        src="/images/icon-logo.png"
+        alt=""
+        width={28}
+        height={36}
+        className="h-9 w-auto object-contain"
+        aria-hidden
+      />
+    </span>
   )
 }
 
@@ -125,24 +127,28 @@ export default function AboutPage() {
       <section id="values" className="scroll-mt-28 bg-offwhite px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-heading text-4xl text-black lg:text-5xl">Our Core Values</h2>
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-            <ValueCard name="Honor" icon={<IconShield />}>
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-6">
+            <ValueCard name="Honor" icon={<IconShield />} className="lg:col-span-2">
               <p>We treat every partnership as a responsibility we take personally.</p>
               <p>Respect, discretion, and careful counsel guide how we show up — every day.</p>
             </ValueCard>
-            <ValueCard name="Integrity" icon={<IconScale />}>
+            <ValueCard name="Integrity" icon={<IconScale />} className="lg:col-span-2">
               <p>We do the right thing, even when no one is watching.</p>
               <p>Transparent communication and honest recommendations are non-negotiable.</p>
             </ValueCard>
-            <ValueCard name="Excellence" icon={<IconStar />}>
+            <ValueCard name="Excellence" icon={<IconStar />} className="lg:col-span-2">
               <p>We go beyond accuracy to deliver insight.</p>
               <p>We sweat the details so you can focus on leadership and growth.</p>
             </ValueCard>
-            <ValueCard name="Stewardship" icon={<IconStewardship />}>
+            <ValueCard
+              name="Stewardship"
+              icon={<IconStewardship />}
+              className="lg:col-span-2 lg:col-start-2"
+            >
               <p>We manage your finances as carefully as our own.</p>
               <p>We protect what you have built while helping you invest wisely in what is next.</p>
             </ValueCard>
-            <ValueCard name="Innovation" icon={<IconSpark />}>
+            <ValueCard name="Innovation" icon={<IconSpark />} className="lg:col-span-2">
               <p>We use modern tools to keep you informed in real time.</p>
               <p>Clear dashboards and streamlined workflows meet old-fashioned service.</p>
             </ValueCard>
@@ -153,7 +159,7 @@ export default function AboutPage() {
       <CTABanner
         heading="Ready to plan your next chapter together?"
         subtext="Tell us what you are building — we will map a forward-looking path with you."
-        subtextClassName="max-w-none whitespace-nowrap text-sm sm:text-base md:text-lg"
+        subtextClassName="shrink-0 whitespace-nowrap text-sm sm:text-base lg:text-lg"
         ctaLabel={"Let's grow together"}
         ctaHref="/contact#book"
       />

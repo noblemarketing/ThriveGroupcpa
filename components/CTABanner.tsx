@@ -42,12 +42,18 @@ export function CTABanner({
           <div className="absolute inset-0 z-[1] bg-black/70" aria-hidden />
         </>
       ) : null}
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-6 text-center">
         <h2 id="cta-banner-heading" className="font-heading text-3xl tracking-tight md:text-4xl">
           {heading}
         </h2>
         {subtext ? (
-          <p className={`text-lg text-white/85 ${subtextClassName ?? "max-w-2xl"}`}>{subtext}</p>
+          <div className="w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <p
+              className={`mx-auto w-max text-white/85 ${subtextClassName ?? "max-w-2xl text-lg"}`}
+            >
+              {subtext}
+            </p>
+          </div>
         ) : null}
         <Link
           href={ctaHref}

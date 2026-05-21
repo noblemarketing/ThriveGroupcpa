@@ -192,6 +192,7 @@ export default function ServicesPage() {
       <CTABanner
         heading="Not sure where to start?"
         subtext="We will help you prioritize what matters for your stage, industry, and goals — together."
+        subtextClassName="shrink-0 whitespace-nowrap text-sm sm:text-base lg:text-lg"
         ctaLabel={"Let's grow together"}
         ctaHref="/contact#book"
       />
