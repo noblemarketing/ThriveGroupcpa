@@ -134,7 +134,7 @@ export default function HomePage() {
           />
         </div>
         <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center gap-8 px-6 py-16 md:py-24">
-          <p className="text-sm uppercase tracking-[0.2em] text-gold">Lancaster, PA</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-white">Lititz, PA</p>
           <h1 className="font-heading text-4xl leading-tight text-gold md:text-6xl">
             Clarity, confidence, and a stronger tomorrow
           </h1>
