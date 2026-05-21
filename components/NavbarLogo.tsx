@@ -11,9 +11,9 @@ export function NavbarLogo({ className }: NavbarLogoProps) {
     <img
       src="/images/2tonedlogo.svg"
       alt="Thrive Group CPA"
-      width={2055}
-      height={592}
-      className={`max-w-full object-contain object-left ${className ?? ""}`}
+      width={248}
+      height={72}
+      className={`h-auto w-auto max-w-full object-contain object-left ${className ?? ""}`}
       decoding="async"
     />
   )

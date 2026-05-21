@@ -32,19 +32,19 @@ export function Navbar() {
     "text-charcoal hover:text-gold focus-visible:outline-gold"
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black bg-white shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-50 w-full max-w-[100vw] border-b border-black bg-white shadow-sm">
       <nav
-        className="relative mx-auto flex min-h-[5.75rem] max-w-6xl items-center gap-2 px-4 md:min-h-[6.5rem] md:gap-3 md:px-6"
+        className="relative mx-auto grid min-h-[5.75rem] w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] md:min-h-[6.5rem] md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-3 md:pl-6 md:pr-6"
         aria-label="Primary"
       >
         <Link
           href="/"
-          className="z-10 flex min-w-0 shrink-0 items-center pr-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:pr-0"
+          className="z-10 flex min-w-0 items-center overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
-          <NavbarLogo className="h-auto max-h-11 w-auto max-w-[min(100%,11rem)] shrink-0 object-contain object-left sm:max-h-12 sm:max-w-[min(100%,13rem)] md:max-h-[3.75rem] md:max-w-[min(100%,15.5rem)]" />
+          <NavbarLogo className="max-h-10 max-w-[9.5rem] sm:max-h-11 sm:max-w-[11rem] md:max-h-[3.75rem] md:max-w-[15.5rem]" />
         </Link>
 
-        <ul className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 md:flex md:gap-1 lg:gap-2">
+        <ul className="hidden min-w-0 items-center justify-center gap-0.5 md:col-start-2 md:flex md:gap-1 lg:gap-2">
           {nav.map((item) => (
             <li key={item.href}>
               <Link
@@ -57,7 +57,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="z-10 ml-auto flex shrink-0 items-center gap-2 md:gap-3">
+        <div className="z-10 flex shrink-0 items-center justify-end gap-2 md:col-start-3 md:gap-3">
           <button
             type="button"
             className="inline-flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-sm border-2 border-black bg-white text-black shadow-sm transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:hidden"
@@ -102,7 +102,7 @@ export function Navbar() {
         id="mobile-nav"
         className={`md:hidden ${open ? "max-h-[480px] border-t border-black/10" : "max-h-0 overflow-hidden"} bg-white transition-all duration-300 ease-out`}
       >
-        <ul className="flex flex-col gap-1 px-4 py-4">
+        <ul className="flex flex-col gap-1 py-4 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))]">
           {nav.map((item) => (
             <li key={item.href}>
               <Link
