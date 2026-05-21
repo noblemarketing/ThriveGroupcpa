@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { TeamCard } from "@/components/TeamCard"
 import { ValueCard } from "@/components/ValueCard"
 import { CTABanner } from "@/components/CTABanner"
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 function IconShield() {
   return (
-    <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden>
+    <svg className="h-12 w-12" viewBox="0 0 32 32" fill="none" aria-hidden>
       <path d="M16 4l10 4v9c0 6-4 10-10 12-6-2-10-6-10-12V8l10-4z" stroke="currentColor" strokeWidth="1.5" />
     </svg>
   )
@@ -19,7 +20,7 @@ function IconShield() {
 
 function IconScale() {
   return (
-    <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden>
+    <svg className="h-12 w-12" viewBox="0 0 32 32" fill="none" aria-hidden>
       <path d="M6 24h20M10 24V12l-3 3M22 24V8l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )
@@ -27,7 +28,7 @@ function IconScale() {
 
 function IconStar() {
   return (
-    <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden>
+    <svg className="h-12 w-12" viewBox="0 0 32 32" fill="none" aria-hidden>
       <path
         d="M16 6l2.8 6.3 6.9.8-5 4.4 1.5 6.7L16 20.7l-6.2 3.5 1.5-6.7-5-4.4 6.9-.8L16 6z"
         stroke="currentColor"
@@ -38,22 +39,22 @@ function IconStar() {
   )
 }
 
-function IconLeaf() {
+function IconStewardship() {
   return (
-    <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden>
-      <path
-        d="M6 24c8-8 18-8 22-14 0 10-8 18-22 14z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <Image
+      src="/images/icon-logo.png"
+      alt=""
+      width={36}
+      height={48}
+      className="h-12 w-auto object-contain mix-blend-lighten"
+      aria-hidden
+    />
   )
 }
 
 function IconSpark() {
   return (
-    <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden>
+    <svg className="h-12 w-12" viewBox="0 0 32 32" fill="none" aria-hidden>
       <path d="M10 18l12-10-4 14-2-6-6-2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
     </svg>
   )
@@ -133,7 +134,7 @@ export default function AboutPage() {
               <p>We go beyond accuracy to deliver insight.</p>
               <p>We sweat the details so you can focus on leadership and growth.</p>
             </ValueCard>
-            <ValueCard name="Stewardship" icon={<IconLeaf />}>
+            <ValueCard name="Stewardship" icon={<IconStewardship />}>
               <p>We manage your finances as carefully as our own.</p>
               <p>We protect what you have built while helping you invest wisely in what is next.</p>
             </ValueCard>

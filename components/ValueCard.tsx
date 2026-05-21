@@ -12,7 +12,7 @@ export function ValueCard({ name, icon, children }: ValueCardProps) {
       <div className="mb-3 text-gold" aria-hidden>
         {icon}
       </div>
-      <h3 className="font-heading text-xl text-black">{name}</h3>
+      <h3 className="font-heading text-xl font-bold text-black">{name}</h3>
       <div className="mt-2 space-y-2 text-charcoal">{children}</div>
     </article>
   )
