@@ -36,10 +36,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} min-h-screen overflow-x-hidden font-body`}>
-        <Navbar />
-        <div className="isolate pt-[92px] md:pt-[104px]">{children}</div>
-        <Footer />
+      <body className={`${montserrat.variable} min-h-screen font-body`}>
+        <div className="overflow-x-hidden">
+          <Navbar />
+          <div className="isolate pt-[92px] md:pt-[104px]">{children}</div>
+          <Footer />
+        </div>
         <BackToTopButton />
       </body>
     </html>

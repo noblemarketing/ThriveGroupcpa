@@ -214,11 +214,9 @@ export default function HomePage() {
           </h2>
           <div className="mx-auto mt-4 max-w-3xl space-y-2 text-center text-charcoal">
             <p>These principles shape how we listen, advise, and grow alongside you.</p>
-            <div className="w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <p className="mx-auto w-max whitespace-nowrap text-sm sm:text-base">
-                Every engagement is a partnership — not a transaction.
-              </p>
-            </div>
+            <p className="text-balance text-sm sm:text-base md:whitespace-nowrap">
+              Every engagement is a partnership — not a transaction.
+            </p>
           </div>
           <ul className="mt-10 flex flex-wrap justify-center gap-3">
             {values.map((v) => (
