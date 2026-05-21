@@ -1,5 +1,4 @@
 import Link from "next/link"
-import type { ReactNode } from "react"
 import { FooterBrandIcon } from "@/components/FooterBrandIcon"
 import { officeAddressDisplay } from "@/lib/site"
 
@@ -49,26 +48,6 @@ function NavColumn({
         ))}
       </ul>
     </div>
-  )
-}
-
-function SocialIconLink({
-  href,
-  label,
-  children,
-}: {
-  href: string
-  label: string
-  children: ReactNode
-}) {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/70 text-white transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-    >
-      {children}
-    </a>
   )
 }
 
@@ -129,40 +108,6 @@ export function Footer() {
       <div className="border-t border-white/25" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-10">
-        <ul className="flex flex-wrap items-center justify-center gap-4">
-          <li>
-            <SocialIconLink href="mailto:hello@thrivepartnerscpa.com" label="Email Thrive Group CPA">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-                <path d="M4 6h16v12H4z" strokeLinejoin="round" />
-                <path d="M4 7l8 6 8-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </SocialIconLink>
-          </li>
-          <li>
-            <SocialIconLink href="/contact" label="Contact">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinejoin="round" />
-              </svg>
-            </SocialIconLink>
-          </li>
-          <li>
-            <SocialIconLink href="/contact#book" label="Book a discovery call">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-                <rect x="3" y="4" width="18" height="18" rx="2" strokeLinejoin="round" />
-                <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
-              </svg>
-            </SocialIconLink>
-          </li>
-          <li>
-            <SocialIconLink href="/portal" label="Client portal">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-                <circle cx="12" cy="8" r="3.5" />
-                <path d="M5 20v-1a7 7 0 0 1 14 0v1" strokeLinecap="round" />
-              </svg>
-            </SocialIconLink>
-          </li>
-        </ul>
-
         <p className="text-center text-xs text-offwhite/65">
           © {new Date().getFullYear()} Thrive Group CPA. All rights reserved.
         </p>
