@@ -90,7 +90,7 @@ function ServiceSection({
 export default function ServicesPage() {
   return (
     <main className="bg-white">
-      <section className="relative isolate border-b border-white/10 bg-[#333333] px-6 py-16">
+      <section className="relative isolate border-b border-white/10 bg-black px-6 py-16">
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:text-sm">
             Our services

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
+import { BackToTopButton } from "@/components/BackToTopButton"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { OPENGRAPH_DESCRIPTION, SITE_META_DESCRIPTION } from "@/lib/brand"
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Navbar />
         <div className="isolate pt-[92px] md:pt-[104px]">{children}</div>
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   )
