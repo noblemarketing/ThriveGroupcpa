@@ -74,11 +74,15 @@ export default function AboutPage() {
               {MISSION_STATEMENT_FULL}
             </p>
           </div>
-          <div
-            className="min-h-[280px] w-full rounded-sm bg-black shadow-inner"
-            role="img"
-            aria-label="Placeholder image for Thrive Group CPA office or team"
-          />
+          <div className="relative min-h-[280px] w-full overflow-hidden rounded-sm shadow-inner">
+            <Image
+              src="/images/our-mission.png"
+              alt="Professionals using laptops, tablets, and phones while seated together."
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         </div>
       </section>
 
@@ -120,8 +124,8 @@ export default function AboutPage() {
 
       <section id="values" className="scroll-mt-28 bg-offwhite px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-heading text-3xl text-black">Our Core Values</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="font-heading text-4xl text-black lg:text-5xl">Our Core Values</h2>
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
             <ValueCard name="Honor" icon={<IconShield />}>
               <p>We treat every partnership as a responsibility we take personally.</p>
               <p>Respect, discretion, and careful counsel guide how we show up — every day.</p>
@@ -149,6 +153,7 @@ export default function AboutPage() {
       <CTABanner
         heading="Ready to plan your next chapter together?"
         subtext="Tell us what you are building — we will map a forward-looking path with you."
+        subtextClassName="max-w-none whitespace-nowrap text-sm sm:text-base md:text-lg"
         ctaLabel={"Let's grow together"}
         ctaHref="/contact#book"
       />

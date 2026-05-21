@@ -5,6 +5,7 @@ import type { ReactNode } from "react"
 type CTABannerProps = {
   heading: ReactNode
   subtext?: string
+  subtextClassName?: string
   ctaLabel: string
   ctaHref: string
   /** Full-bleed background (e.g. `/images/cta-ready-bg.png`). Grayscale + dark overlay applied. */
@@ -15,6 +16,7 @@ type CTABannerProps = {
 export function CTABanner({
   heading,
   subtext,
+  subtextClassName,
   ctaLabel,
   ctaHref,
   backgroundImageSrc,
@@ -44,7 +46,9 @@ export function CTABanner({
         <h2 id="cta-banner-heading" className="font-heading text-3xl tracking-tight md:text-4xl">
           {heading}
         </h2>
-        {subtext ? <p className="max-w-2xl text-lg text-white/85">{subtext}</p> : null}
+        {subtext ? (
+          <p className={`text-lg text-white/85 ${subtextClassName ?? "max-w-2xl"}`}>{subtext}</p>
+        ) : null}
         <Link
           href={ctaHref}
           className="inline-flex min-h-[48px] items-center justify-center rounded-sm bg-gold px-8 py-3 text-base font-semibold text-black transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
