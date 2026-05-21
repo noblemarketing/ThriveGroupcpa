@@ -175,15 +175,8 @@ export default function ServicesPage() {
         ]}
       />
 
-      <section id="areas" className="relative scroll-mt-28 overflow-hidden px-6 py-16">
-        <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/contour-mapping-3-01.jpg')" }}
-          aria-hidden
-        />
-        <div className="pointer-events-none absolute inset-0 bg-black/20" aria-hidden />
-        <div className="pointer-events-none absolute inset-0 bg-offwhite/65" aria-hidden />
-        <div className="relative z-10 mx-auto max-w-4xl">
+      <section id="areas" className="scroll-mt-28 px-6 py-16">
+        <div className="mx-auto max-w-4xl">
           <AreasWeServeDisclosure>
             <p className="text-lg text-charcoal">
               Thrive Group CPA proudly serves businesses and individuals across Lancaster County and
