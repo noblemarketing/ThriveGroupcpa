@@ -89,6 +89,8 @@ function IconPayroll() {
   )
 }
 
+const values = ["Honor", "Integrity", "Excellence", "Stewardship", "Innovation"] as const
+
 export default function HomePage() {
   return (
     <main>
@@ -218,6 +220,18 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+          <ul className="mt-10 flex flex-wrap justify-center gap-3">
+            {values.map((v) => (
+              <li key={v}>
+                <Link
+                  href="/about#values"
+                  className="inline-flex rounded-full border border-black/10 bg-white px-5 py-2 text-sm font-semibold text-black shadow-sm transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  {v}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

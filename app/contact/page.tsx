@@ -36,10 +36,10 @@ export default function ContactPage() {
       </section>
 
       <section id="location" className="scroll-mt-28 px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="font-heading text-3xl text-black">Location & Hours</h2>
-          <div className="mt-8 grid gap-10 md:grid-cols-2">
-            <div className="space-y-3 text-charcoal">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-3xl text-black">Location & Hours</h2>
+          <div className="mx-auto mt-8 grid w-full max-w-4xl grid-cols-1 items-center gap-10 md:grid-cols-2">
+            <div className="w-full space-y-3 text-center text-charcoal">
               <p>
                 <span className="font-semibold text-black">Address:</span> {officeAddressDisplay}
               </p>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <span className="font-semibold text-black">Hours:</span> Monday–Friday 8am–5pm
               </p>
             </div>
-            <GoogleMapsEmbed id="map-embed" />
+            <GoogleMapsEmbed id="map-embed" className="w-full" />
           </div>
         </div>
       </section>
