@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 const SIZE = 56
 const STROKE = 2
@@ -9,27 +9,74 @@ const RADIUS = (SIZE - STROKE) / 2
 const CENTER = SIZE / 2
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
+/** Higher = snappier ring; lower = softer follow on scroll */
+const SCROLL_SMOOTHING = 10
+
+function lerpProgress(current: number, target: number, deltaMs: number) {
+  const t = 1 - Math.exp(-SCROLL_SMOOTHING * (deltaMs / 1000))
+  const next = current + (target - current) * t
+  if (Math.abs(target - next) < 0.001) return target
+  return next
+}
+
 export function BackToTopButton() {
   const [progress, setProgress] = useState(0)
   const [visible, setVisible] = useState(false)
+  const targetProgressRef = useRef(0)
+  const displayProgressRef = useRef(0)
+  const lastFrameRef = useRef<number | null>(null)
 
-  const updateProgress = useCallback(() => {
+  const readScroll = useCallback(() => {
     const scrollTop = window.scrollY
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight
     const ratio = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0
-    setProgress(ratio)
+    targetProgressRef.current = ratio
     setVisible(scrollTop > 120)
   }, [])
 
   useEffect(() => {
-    updateProgress()
-    window.addEventListener("scroll", updateProgress, { passive: true })
-    window.addEventListener("resize", updateProgress, { passive: true })
-    return () => {
-      window.removeEventListener("scroll", updateProgress)
-      window.removeEventListener("resize", updateProgress)
+    readScroll()
+
+    let scrollTicking = false
+    const onScroll = () => {
+      if (scrollTicking) return
+      scrollTicking = true
+      requestAnimationFrame(() => {
+        readScroll()
+        scrollTicking = false
+      })
     }
-  }, [updateProgress])
+
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", readScroll, { passive: true })
+
+    let frameId = 0
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const animate = (time: number) => {
+      const last = lastFrameRef.current ?? time
+      lastFrameRef.current = time
+      const deltaMs = Math.min(time - last, 64)
+
+      const target = targetProgressRef.current
+      const current = displayProgressRef.current
+      const next = reduceMotion.matches ? target : lerpProgress(current, target, deltaMs)
+
+      if (next !== current) {
+        displayProgressRef.current = next
+        setProgress(next)
+      }
+
+      frameId = requestAnimationFrame(animate)
+    }
+    frameId = requestAnimationFrame(animate)
+
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", readScroll)
+      cancelAnimationFrame(frameId)
+    }
+  }, [readScroll])
 
   const scrollToTop = () => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -75,7 +122,7 @@ export function BackToTopButton() {
           strokeLinecap="round"
           strokeDasharray={CIRCUMFERENCE}
           strokeDashoffset={strokeOffset}
-          className="text-gold transition-[stroke-dashoffset] duration-150 ease-out motion-reduce:transition-none"
+          className="text-gold motion-reduce:transition-none"
         />
       </svg>
       <Image
